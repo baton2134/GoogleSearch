@@ -7,6 +7,11 @@ import os
 import statistics
 import time
 from telebot import types
+from selenium.webdriver.chrome.options import Options
+import time
+from urllib.parse import quote_plus
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 bot = telebot.TeleBot(config.TOKEN)
 
 @bot.message_handler(commands=['start'])
@@ -20,10 +25,7 @@ m=""
 
 
 
-import time
-from urllib.parse import quote_plus
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
+
 
 
 class Browser:
@@ -38,7 +40,12 @@ class Browser:
         return
 
     def start(self):
-        self.driver = webdriver.Chrome('/path/to/chromedriver')
+        
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument('--no-sandbox')
+        driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver', options=chrome_options)
+        #self.driver = webdriver.Chrome('/path/to/chromedriver')
         self.driver.implicitly_wait(self.implicit_wait_time)
         
 
