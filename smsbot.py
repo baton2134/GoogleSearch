@@ -85,7 +85,7 @@ class Browser:
 def lalala(message):
     global m,i
     m = str(message.text)
-    print(m)
+    
     path = '<YOUR PATH TO PHANTOMJS>/phantomjs-2.1.1-windows/bin/phantomjs.exe'
     br = Browser(path)
     results = br.search(str(m))
