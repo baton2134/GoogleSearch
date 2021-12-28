@@ -38,7 +38,7 @@ class Browser:
         return
 
     def start(self):
-        self.driver = webdriver.Chrome(ChromeDriverManager(self.path))
+        self.driver = webdriver.Chrome('/path/to/chromedriver')
         self.driver.implicitly_wait(self.implicit_wait_time)
         
 
@@ -86,7 +86,7 @@ def lalala(message):
     global m,i
     m = str(message.text)
     
-    path = '/usr/bin/chromedriver'
+    path = '/path/to/chromedriver'
     br = Browser(path)
     results = br.search(str(m))
     bot.send_message(message.chat.id, i)
