@@ -38,7 +38,7 @@ class Browser:
         return
 
     def start(self):
-        self.driver = webdriver.Chrome(self.path)
+        self.driver = webdriver.Chrome("webdriver.chrome.driver", "/usr/bin/chromedriver")
         self.driver.implicitly_wait(self.implicit_wait_time)
         return
 
@@ -86,7 +86,7 @@ def lalala(message):
     global m,i
     m = str(message.text)
     
-    path = '/path/to/chromedriver'
+    path = '<YOUR PATH TO PHANTOMJS>/phantomjs-2.1.1-windows/bin/phantomjs.exe'
     br = Browser(path)
     results = br.search(str(m))
     bot.send_message(message.chat.id, i)
