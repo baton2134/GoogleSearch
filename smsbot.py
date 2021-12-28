@@ -38,8 +38,7 @@ class Browser:
         return
 
     def start(self):
-        self.driver = webdriver.Chrome('/path/to/chromedriver')
-        driver.get('http://www.google.com/')
+        self.driver = webdriver.Chrome(self.path)
         self.driver.implicitly_wait(self.implicit_wait_time)
         return
 
