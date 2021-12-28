@@ -38,7 +38,7 @@ class Browser:
         return
 
     def start(self):
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(self.implicit_wait_time)
         
 
