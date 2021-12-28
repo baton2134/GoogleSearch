@@ -86,7 +86,7 @@ def lalala(message):
     global m,i
     m = str(message.text)
     
-    path = '<YOUR PATH TO PHANTOMJS>/phantomjs-2.1.1-windows/bin/phantomjs.exe'
+    path = '/usr/bin/chromedriver'
     br = Browser(path)
     results = br.search(str(m))
     bot.send_message(message.chat.id, i)
