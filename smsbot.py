@@ -38,17 +38,7 @@ class Browser:
         return
 
     def start(self):
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-        ChromeDriverService service = new ChromeDriverService.Builder()
-                .usingDriverExecutable(new File("/usr/local/bin/chromedriver"))
-                .usingAnyFreePort()
-                .build();
-        try {
-            service.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.driver.implicitly_wait(self.implicit_wait_time)
         
 
