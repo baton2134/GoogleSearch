@@ -38,10 +38,7 @@ class Browser:
         return
 
     def start(self):
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--disable-gpu")
-        browser = webdriver.Chrome(options=chrome_options)
+        self.driver = webdriver.Chrome(ChromeDriverManager(self.path).install())
         self.driver.implicitly_wait(self.implicit_wait_time)
         
 
