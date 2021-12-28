@@ -42,9 +42,9 @@ class Browser:
     def start(self):
         
         chrome_options = Options()
-        chrome_options.add_argument("--headless")
         chrome_options.add_argument('--no-sandbox')
-        driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver', options=chrome_options)
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver', options=chrome_options)
         #self.driver = webdriver.Chrome('/path/to/chromedriver')
         self.driver.implicitly_wait(self.implicit_wait_time)
         
