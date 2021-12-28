@@ -42,7 +42,7 @@ class Browser:
     def start(self):
         
         
-        self.driver = webdriver.Chrome("/usr/bin/chromedriver")
+        self.driver = webdriver.Chrome('/snap/chromium/1854/usr/lib/chromium-browser/chromedriver')
         #self.driver = webdriver.Chrome('/path/to/chromedriver')
         self.driver.implicitly_wait(self.implicit_wait_time)
         
