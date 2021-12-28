@@ -12,19 +12,9 @@ bot = telebot.TeleBot(config.TOKEN)
 @bot.message_handler(commands=['start'])
 def wel(message):
 
-    #кнопки
-
-    #hello
     bot.send_message(message.chat.id, "добро пожаловать, сделан @lamia222")
 m=""
 
-    #bot.send_message(message.chat.id, )
-    #if message.chat.type == 'private':
-    #    if message.text == 'найти в гугл':
-    #        bot.send_message(message.chat.id, "Введите запрос")
-    #        time.sleep(10)
-    #        m=message.text
-    #        bot.send_message(message.chat.id, (test.k))
 
 
 
